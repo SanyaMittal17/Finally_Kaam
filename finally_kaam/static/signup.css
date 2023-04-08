@@ -13,7 +13,7 @@ body {
   /* background-color: #FEDCC5; */
   background-color:linear-gradient( rgb(254, 220, 197), rgb(255, 213, 185));
   border-radius: 1vh;
-  /* box-shadow: 0.1vh 0.1vh 0.1vh rgba(0, 0, 0, 0.2); */
+  box-shadow: 2vh 2vh 2vh rgba(0, 0, 0, 0.2);
   margin-left: 13vh;
   max-width: 80vh;
   /* max-height: 500vh; */
@@ -31,6 +31,7 @@ h1 {
   color: #F7460A;
   font-size: 4.5vh;
   margin-top: 3vh;
+  margin-left: 0vh;
   /* margin-bottom: 2vh; */
   /* font-style:Glegoo ; */
 }
@@ -38,6 +39,7 @@ h2 {
   color: #040404;
   font-size: 3.5vh;
   margin-top: 0vh;
+  margin-bottom: 2vh;
 }
 
 form {
@@ -52,17 +54,18 @@ label {
   text-align: left;
 }
 
+
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"] 
+ {
   border: 0.2vh solid #dddddd;
   border-radius: 0.5vh;
   font-size: 2.5vh;
   padding: 1vh;
   margin-bottom: 2vh;
   width: 100%;
-}
-
+ }
 button[type="submit"] {
   background-color: #F25019;
   border: none;
@@ -91,7 +94,7 @@ button[type="submit"] {
   margin: 5px; /* space between buttons */
   .inline {
       display: inline-block; 
-      margin : 2px;
+      margin : 2vh;
     }
 
     .btn1{
