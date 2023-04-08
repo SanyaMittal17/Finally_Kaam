@@ -25,16 +25,16 @@ def forgotpassword():
         email = request.form('email')
     return render_template('forgotpassword.html')
 
-@app.route('/forgotpasswordverify')
+@app.route('/forgotpasswordverify', methods = ['UPDATE'])
 def forgotpasswordverify():
     return render_template('forgotpasswordverify.html')
 @app.route('/profile')
 def profile():
     return render_template('profile.html')
-@app.route('/edit_profile')
+@app.route('/edit_profile' , methods = ['GET','POST'])
 def edit_profile():
     return render_template('edit_profile.html')
-@app.route('/AddPost')
+@app.route('/AddPost', methods = ['GET' , 'POST'])
 def AddPost():
     return render_template('AddPost.html')
 if __name__ =="__main__":
