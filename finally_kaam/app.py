@@ -1,16 +1,25 @@
 from flask import Flask,render_template, request
 from flask import Blueprint
 app= Flask(__name__)
+app.config['SECRET KEY'] = 'cop290'
+@app.route('/', methods=['GET','POST'])
 
-@app.route('/')
 def login():
+    if request.method == 'POST':
+        email = request.form('email')
+        password = request.form('password')
     return render_template('login.html')
+
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
-@app.route('/forgotpassword')
+
+@app.route('/forgotpassword', methods=['GET','POST'])
 def forgotpassword():
+    if request.method == 'POST':
+        email = request.form('email')
     return render_template('forgotpassword.html')
+
 @app.route('/forgotpasswordverify')
 def forgotpasswordverify():
     return render_template('forgotpasswordverify.html')
