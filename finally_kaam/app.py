@@ -10,8 +10,13 @@ def login():
         password = request.form('password')
     return render_template('login.html')
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET','POST'])
 def signup():
+    if request.method == 'POST':
+       username = request.form('username')
+       email = request.form('email')
+       password1 = request.form('password')
+       password2 = request.form('confirm-password')
     return render_template('signup.html')
 
 @app.route('/forgotpassword', methods=['GET','POST'])
