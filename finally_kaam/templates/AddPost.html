@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <title>Signup Page</title> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='AddPost.css') }}">
+</head>
+<body>
+        <!-- Add the image to html-->
+        <img src="{{url_for('static', filename='Baba.png')}}" align="right" alt="" height="500vh" width="500vh" /> 
+        <div class = "Drag">
+            <img src="{{url_for('static', filename='DragPhotos.png')}}" align="left" alt="" height="250vh" width="350vh" /> </div>
+    
+         <p>Drag photos and videos here </p>
+
+       <form method="post">
+        
+        <!-- <label for="image">Image</label> -->
+        <input type="file" id="image" name="image" required>
+        <!-- <label for="comments">Comments</label> -->
+        <textarea id="comments" name="comments" rows="5" required></textarea>
+        <br>
+    
+        <button type="submit">Submit</button>
+    
+    </form>
+   
+</body>
+</html>

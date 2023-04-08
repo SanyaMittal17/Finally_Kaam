@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    /* display: flex; */
+  vertical-align: center;
+  }
+  
+  body {
+    background-color: #FEDCC5;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  
+  
+  img {
+    margin-right: 20vh;
+    margin-top : 2vh;
+    
+  }
+ 
+  p{
+    float: left;
+    margin-left: 24vh
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-left: 23vh;
+  }
+  
+  /* label {
+    color: #333333;
+    font-size: 1.6vh;
+    margin-bottom: 1vh;
+    text-align: left;
+  } */
+  .Drag{
+    float: left;
+    margin-left: 23vh;
+    margin-top : 10vh;
+  }
+  input[type="file"]
+   {
+    border: 0.2vh solid #dddddd;
+    border-radius: 0.5vh;
+    font-size: 2.6vh;
+    padding: 1vh;
+    margin-bottom: 2vh;
+    width: 100%;
+  }
+  
+  button[type="submit"] {
+    background-color: #F25019;
+    border: none;
+    border-radius: 0.5vh;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 2.6vh;
+    padding: 1vh;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #F25019;
+  }

@@ -25,9 +25,11 @@
         <img src="{{url_for('static', filename='Baba.png')}}" align="right" alt="" height="500vh" width="500vh" />  
     
   <div class="container">
-    <h1>TastyTales</h1>
-    <h2>Sign Up</h2>
+    <h1 align="left">TastyTales</h1>
+    <h2 align="left">Sign Up</h2>
     <form>
+        <label for="myfile">Select a profile picture:</label>
+        <input type="file" id="myfile" name="myfile"><br>
         <label for="fullname">Full Name</label>
       <input type="text" id="fullname" name="fullname" required>
 

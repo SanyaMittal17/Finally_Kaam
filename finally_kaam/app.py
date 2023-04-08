@@ -19,5 +19,8 @@ def profile():
 @app.route('/edit_profile')
 def edit_profile():
     return render_template('edit_profile.html')
+@app.route('/AddPost')
+def AddPost():
+    return render_template('AddPost.html')
 if __name__ =="__main__":
     app.run(debug=True)
