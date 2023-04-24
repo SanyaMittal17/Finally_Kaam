@@ -79,3 +79,4 @@ def AddPost():
     return render_template('AddPost.html')
 if __name__ =="__main__":
     app.run(host='0.0.0.0',debug=True)
+
