@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <!-- <script type ="text/javascript" src="profile.js"></script> -->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link rel="stylesheet" href="{{ url_for('static', filename='mediumish.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+
+  </head>
+  
+<body>
+  
+
+  
+    <!-- <img align="right" src="Baba.png" alt="" height="250vh" width="500vh" /> -->
+    <nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="container">
+        <!-- Begin Logo -->
+        <a class="navbar-brand" href="/index">
+        <img src="{{url_for('static', filename='logo.png')}}" alt="logo" width="200" 
+        height="200">
+        </a>
+        <!-- End Logo -->
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <!-- Begin Menu -->
+          <ul class="navbar-nav ml-auto">
+            <!-- <div class = "navfont"> -->
+            <li class="nav-item">
+            <a class="nav-link" href="/index"  >Home </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/professional"  >Professional</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/homecook"  >Home Cook</a>
+            </li>
+      
+            <li class="nav-item">
+            <a class="nav-link" href="/foodie"  >Foodie</a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/profile"  >Profile<span class="sr-only">(current)</span></a>
+            </li>
+      
+          </ul>
+      
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+          </form>
+      
+        </div>
+      </div>
+      </nav>
+    <div class="profile">
+        <img src="{{url_for('static', filename=user[5])}}" alt="" height="160vh" width="180vh">
+        <h3>{{user[4]}}</h3>
+        <h3>{{user[1]}}</h3>
+
+      <div class="inline">
+        <a href="/edit_profile"><button type = "button" height = "10vh" class = "btn1"><strong>Edit Profile</strong></button></a>
+        <a href="/AddPost"><button type = "button" height = "10vh" class = "btn2"><strong>Add Post</strong></button></a>
+
+      </div>
+      <h2>Recent Posts</h2>
+      <div class="image-container">
+        <img src="{{url_for('static', filename='image1.png')}}"  height="250vh" width="250vh" >
+      </div>
+      <div class="image-container">
+        <img src="{{url_for('static', filename='image2.png')}}"  height="300vh" width="300vh" >
+      </div>
+      <div class="image-container">
+        <img src="{{url_for('static', filename='image3.png')}}" height="220vh" width="250vh" >
+      </div>
+    </div>
+    <script src="/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="/bootstrap.min.js"></script>
+    <script src="/ie10-viewport-bug-workaround.js"></script>
+     
+</body>
+</html>
+

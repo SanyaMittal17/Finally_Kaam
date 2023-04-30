@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <script type="text/javascript" src="login.js"></script>
+</head>
+{% for message in get_flashed_messages() %} 
+    {{ message }}
+  {% endfor %}
+<body>
+        <img src="{{url_for('static', filename='Baba.png')}}" align="right" alt="" height="500vh" width="500vh" />  
+  <div class="container">
+    <h1>TastyTales</h1>
+    <h2>Login</h2>
+<!-- if email not found in database prompt -->
+<form>
+  <!-- action="/action_page.php"  data kaha bhejna hai uske liye hai ye -->
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <div class="forgot-password">
+      <p> <a href= "/forgotpassword">Forgot Password </a> </p></div>
+      <button type="submit" onclick = "handleSubmit()">Sign In</button>
+    </form>
+    <script> 
+      localStorage.setItem("email", email);
+    </script> 
+<p>or continue with </p>
+<p>Don't have an account? <a href= "/signup">Register for free </a> </p>
+  </div>
+</body>
+</html>
+
+
+  <!-- <label for="email" >Email</label><br>
+  <input type="email" required><br>
+  <label for="password">Password</label><br>
+  <input type="password" required><br><br>
+  <input type="submit" value="Sign In">
+</form> 
+<p> <a href= "/forgotpassword">Forgot Password </a> </p>
+
+<p>or continue with </p>
+<p>Don't have an account? <a href= "/signup">Register for free </a> </p>
+
+
+</body>
+</html> -->
+

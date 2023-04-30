@@ -1,0 +1,3 @@
+password hash implementation
+image implementation
+saving global variable 
