@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" href= "{{ url_for('static', filename='favicon.ico') }}">
+<title>home</title>
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+<!-- Fonts -->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link rel="stylesheet" href="{{ url_for('static', filename='mediumish.css') }}">
+</head>
+<body>
+
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="container">
+		<!-- Begin Logo -->
+		<a class="navbar-brand" href="/index">
+		<img src="{{url_for('static', filename='logo.png')}}" alt="logo" width="200" 
+		height="200">
+		</a>
+		<!-- End Logo -->
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<!-- Begin Menu -->
+			<ul class="navbar-nav ml-auto">
+				<!-- <div class = "navfont"> -->
+				<li class="nav-item">
+				<a class="nav-link" href="/index" >Home </a>
+				</li>
+				<li class="nav-item active">
+				<a class="nav-link" href="/professional" >Professional<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/homecook" >HomeCook</a>
+				</li>
+	
+				<li class="nav-item">
+				<a class="nav-link" href="/foodie" >Foodie</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="/profile" >Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/"  >Logout</a>
+				</li>
+	
+			</ul>
+	
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search">
+				<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+			</form>
+	
+		</div>
+	</div>
+	</nav>
+<!-- End Nav
+================================================== -->
+
+<!-- Begin Site Title
+================================================== -->
+<div class="container">
+	<section class="featured-posts">
+		<div class="section-title">
+			<h2><span>Professional</span></h2>
+		</div>
+		<div class="card-columns listfeaturedtag">
+			{% for post in posts %}
+			<!-- begin post -->
+			<div class="card">
+				<div class="row">
+					<div class="col-md-5 wrapthumbnail">
+						<!-- <a href="post.html"> -->
+							<div class="thumbnail" style="background-image:url(/static/{{post[2]}});">
+								<!-- style="background-image:url(/static/{{post.content}});" -->
+								
+							</div>
+						<!-- </a> -->
+					</div>
+					<div class="col-md-7">
+						<div class="card-block">
+							<!-- <h2 class="card-title"><a href="post.html">We're living some strange times</a></h2> -->
+							<h3 class="card-text" style="color:black"><i>{{post[1]}}</i></h3>
+							<div class="metafooter">
+								<div class="wrapfooter">
+									<span class="meta-footer-thumb">
+									<!-- <img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"> -->
+									</span>
+									<span class="author-meta">
+									<!-- <span class="post-name"><a href="otheruser.html">Steve</a></span><br/> -->
+									<span class="post-date">{{post[4]}}</span>
+									</span>
+									<!-- <span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			</div>
+			</section>
+	<!-- <div class="mainheading">
+		<h1 class="sitetitle">Mediumish</h1>
+		<p class="lead">
+			 Bootstrap theme, medium style, simply perfect for bloggers
+		</p>
+	</div> -->
+<!-- End Site Title
+================================================== -->
+
+	<!-- Begin Featured
+	================================================== -->
+	<!-- <section class="featured-posts">
+	<div class="section-title">
+		<h2><span>  Professional</span></h2>
+	</div>
+	<div class="card-columns listfeaturedtag"> -->
+
+		<!-- begin post -->
+		<!-- <div class="card">
+			<div class="row">
+				<div class="col-md-5 wrapthumbnail">
+					<a href="post.html">
+						<div class="thumbnail" style="background-image:url(assets/img/cake1.png);">
+						</div>
+					</a>
+				</div>
+				<div class="col-md-7">
+					<div class="card-block">
+						<h2 class="card-title"><a href="post.html">We're living some strange times</a></h2>
+						<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="otheruser.html">Steve</a></span><br/>
+								<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- end post -->
+
+		<!-- begin post -->
+		<!-- <div class="card">
+			<div class="row">
+				<div class="col-md-5 wrapthumbnail">
+					<a href="post.html">
+						<div class="thumbnail" style="background-image:url(assets/img/cake2.png);">
+						</div>
+					</a>
+				</div>
+				<div class="col-md-7">
+					<div class="card-block">
+						<h2 class="card-title"><a href="post.html">The beauty of this world is in your heart</a></h2>
+						<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="otheruser.html">Jane</a></span><br/>
+								<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!--end post -->
+
+		<!-- begin post -->
+		<!-- <div class="card">
+			<div class="row">
+				<div class="col-md-5 wrapthumbnail">
+					<a href="post.html">
+						<div class="thumbnail" style="background-image:url(assets/img/cake3.png);">
+						</div>
+					</a>
+				</div>
+				<div class="col-md-7">
+					<div class="card-block">
+						<h2 class="card-title"><a href="post.html">Dreaming of Las Vegas Crazyness</a></h2>
+						<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="otheruser.html">Mary</a></span><br/>
+								<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- end post -->
+
+		<!-- begin post -->
+		<!-- <div class="card">
+			<div class="row">
+				<div class="col-md-5 wrapthumbnail">
+					<a href="post.html">
+						<div class="thumbnail" style="background-image:url(assets/img/cake4.png);">
+						</div>
+					</a>
+				</div>
+				<div class="col-md-7">
+					<div class="card-block">
+						<h2 class="card-title"><a href="post.html">San Francisco at its best view in all seasons</a></h2>
+						<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="otheruser.html">Sal</a></span><br/>
+								<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+								</span>
+								<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- end post -->
+
+	<!-- </div> -->
+	<!-- </section> -->
+	<!-- End Featured
+	================================================== -->
+
+	<!-- Begin List Posts
+	================================================== -->
+	<section class="recent-posts">
+		<div class="section-title">
+			<h2><span>Stories</span></h2>
+		</div>
+		<div class="card-columns listrecent">
+	
+			<!-- begin post -->
+			<div class="card">
+				<a href="post.html">
+					<img class="img-fluid" src="{{url_for('static', filename='cake5.png')}}" alt="">
+				</a>
+				<div class="card-block">
+					<h2 class="card-title"><a href="post.html">Autumn doesn't have to be nostalgic, you know?</a></h2>
+					<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+					<div class="metafooter">
+						<div class="wrapfooter">
+							<span class="meta-footer-thumb">
+							<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+							</span>
+							<span class="author-meta">
+							<span class="post-name"><a href="otheruser.html">Sal</a></span><br/>
+							<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+							</span>
+							<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+	
+			<!-- begin post -->
+			<div class="card">
+				<a href="post.html">
+					<img class="img-fluid" src="{{url_for('static', filename='cake1.png')}}" alt="">
+				</a>
+				<div class="card-block">
+					<h2 class="card-title"><a href="post.html">Best galleries in the world with photos</a></h2>
+					<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+					<div class="metafooter">
+						<div class="wrapfooter">
+							<span class="meta-footer-thumb">
+							<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+							</span>
+							<span class="author-meta">
+							<span class="post-name"><a href="otheruser.html">Sal</a></span><br/>
+							<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+							</span>
+							<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+	
+			<!-- begin post -->
+			<div class="card">
+				<a href="post.html">
+					<img class="img-fluid" src="{{url_for('static', filename='cake2.png')}}" alt="">
+				</a>
+				<div class="card-block">
+					<h2 class="card-title"><a href="post.html">Little red dress and a perfect summer</a></h2>
+					<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+					<div class="metafooter">
+						<div class="wrapfooter">
+							<span class="meta-footer-thumb">
+							<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+							</span>
+							<span class="author-meta">
+							<span class="post-name"><a href="otheruser.html">Sal</a></span><br/>
+							<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+							</span>
+							<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+	
+			<!-- begin post -->
+			<div class="card">
+				<a href="post.html">
+					<img class="img-fluid" src="{{url_for('static', filename='cake3.png')}}" alt="">
+				</a>
+				<div class="card-block">
+					<h2 class="card-title"><a href="post.html">Thinking outside the box can help you prosper</a></h2>
+					<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+					<div class="metafooter">
+						<div class="wrapfooter">
+							<span class="meta-footer-thumb">
+							<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+							</span>
+							<span class="author-meta">
+							<span class="post-name"><a href="otheruser.html">Sal</a></span><br/>
+							<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+							</span>
+							<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+	
+			<!-- begin post -->
+			<div class="card">
+				<a href="post.html">
+					<img class="img-fluid" src="{{url_for('static', filename='cake4.png')}}" alt="">
+				</a>
+				<div class="card-block">
+					<h2 class="card-title"><a href="post.html">10 Things you should know about choosing your house</a></h2>
+					<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+					<div class="metafooter">
+						<div class="wrapfooter">
+							<span class="meta-footer-thumb">
+							<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+							</span>
+							<span class="author-meta">
+							<span class="post-name"><a href="otheruser.html">Sal</a></span><br/>
+							<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+							</span>
+							<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+	
+			<!-- begin post -->
+			<div class="card">
+				<a href="post.html">
+					<img class="img-fluid" src="{{url_for('static', filename='cake5.png')}}" alt="">
+				</a>
+				<div class="card-block">
+					<h2 class="card-title"><a href="post.html">Visiting the world means learning cultures</a></h2>
+					<h4 class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+					<div class="metafooter">
+						<div class="wrapfooter">
+							<span class="meta-footer-thumb">
+							<a href="otheruser.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+							</span>
+							<span class="author-meta">
+							<span class="post-name"><a href="otheruser.html">Sal</a></span><br/>
+							<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
+							</span>
+							<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end post -->
+	
+		</div>
+		</section>
+		<!-- End List Posts
+		================================================== -->
+	
+		<!-- Begin Footer
+		================================================== -->
+		<div class="footer">
+			<p class="pull-left">
+				 Copyright &copy; 2017 Your Website Name
+			</p>
+			<!-- <p class="pull-right">
+				 Mediumish Theme by <a target="_blank" href="https://www.wowthemes.net">WowThemes.net</a>
+			</p> -->
+			<div class="clearfix">
+			</div>
+		</div>
+		<!-- End Footer
+		================================================== -->
+	
+	</div>
+	<!-- /.container -->
+	
+	<!-- Bootstrap core JavaScript
+		================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="/bootstrap.min.js"></script>
+	<script src="/ie10-viewport-bug-workaround.js"></script>
+	</body>
+	</html>
+	
